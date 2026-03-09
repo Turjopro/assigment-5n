@@ -207,3 +207,88 @@ function setActiveTab(tab) {
 
 
 
+
+/* FILTER */
+
+function filterIssues(type) {
+
+    setActiveTab(type)
+
+    let filtered = allIssues
+
+    if (type === "open") {
+
+        filtered = allIssues.filter(issue => issue.status === "open")
+
+    }
+
+    if (type === "closed") {
+
+        filtered = allIssues.filter(issue => issue.status === "closed")
+
+    }
+
+    updateIssueCount(filtered)
+
+    displayIssues(filtered)
+
+}
+
+
+
+
+/* SEARCH */
+
+async function searchIssue() {
+
+    const text = document.getElementById("searchInput").value
+
+    const res = await fetch(
+        `https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${text}`
+    )
+
+    const data = await res.json()
+
+    updateIssueCount(data.data)
+
+    displayIssues(data.data)
+
+}
+
+
+/* MODAL */
+
+function openModal(issue) {
+
+    document.getElementById("modal").classList.remove("hidden")
+
+    document.getElementById("modalTitle").innerText = issue.title
+    document.getElementById("modalDesc").innerText = issue.description
+    document.getElementById("modalAuthor").innerText = issue.author
+    document.getElementById("modalAssignee").innerText = issue.assignee
+    document.getElementById("modalDate").innerText = issue.createdAt
+    document.getElementById("modalPriority").innerText = issue.priority
+
+    const labelsContainer = document.getElementById("modalLabels")
+    labelsContainer.innerHTML = ""
+
+    issue.labels.forEach(label => {
+
+        const span = document.createElement("span")
+
+        if (label === "bug") {
+            span.className = "bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm"
+        }
+        else if (label === "help wanted") {
+            span.className = "bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm"
+        }
+
+        span.innerText = label.toUpperCase()
+
+        labelsContainer.appendChild(span)
+    })
+}
+
+function closeModal() {
+    document.getElementById("modal").classList.add("hidden")
+}
