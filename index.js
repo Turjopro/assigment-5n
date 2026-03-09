@@ -1,8 +1,6 @@
 const API = "https://phi-lab-server.vercel.app/api/v1/lab/issues"
 
 
-/* LOGIN */
-
 function login() {
 
     const username = document.getElementById("username").value
@@ -25,11 +23,6 @@ function login() {
 
 }
 
-
-
-
-/* LOAD ISSUES */
-
 async function loadIssues() {
 
     document.getElementById("loading").classList.remove("hidden")
@@ -48,10 +41,6 @@ async function loadIssues() {
 }
 
 
-
-
-/* ISSUE COUNT */
-
 function updateIssueCount(issues) {
 
     document.getElementById("issueCount").innerText =
@@ -60,9 +49,6 @@ function updateIssueCount(issues) {
 }
 
 
-
-
-/* DISPLAY ISSUES */
 
 function displayIssues(issues) {
 
@@ -78,7 +64,7 @@ function displayIssues(issues) {
                 : "border-purple-600"
 
 
-        /* Priority Style */
+        
 
         let priorityStyle = ""
 
@@ -93,7 +79,7 @@ function displayIssues(issues) {
         }
 
 
-        /* Label Style (FIXED FOR ARRAY) */
+    
 
         let labelHTML = ""
 
@@ -183,7 +169,7 @@ ${labelHTML}
 
 
 
-/* TAB TOGGLE */
+
 
 function setActiveTab(tab) {
 
@@ -206,9 +192,6 @@ function setActiveTab(tab) {
 }
 
 
-
-
-/* FILTER */
 
 function filterIssues(type) {
 
@@ -234,11 +217,6 @@ function filterIssues(type) {
 
 }
 
-
-
-
-/* SEARCH */
-
 async function searchIssue() {
 
     const text = document.getElementById("searchInput").value
@@ -254,9 +232,6 @@ async function searchIssue() {
     displayIssues(data.data)
 
 }
-
-
-/* MODAL */
 
 function openModal(issue) {
 
