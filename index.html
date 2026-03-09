@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GitHub Issues Tracker</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-gray-100">
+
+
+    <!-- LOGIN PAGE -->
+
+    <div id="loginPage" class="flex items-center justify-center h-screen">
+
+        <div class="bg-white shadow-lg p-8 rounded w-80">
+            <img class="mx-auto" src="./assets/github-logo.png" alt="">
+            <h1 class="text-2xl font-bold text-center mb-2">GitHub Issues Tracker</h1>
+            <p class="text-center text-gray-500 mb-6">Sign in to manage your issues</p>
+            <h3 class="mb-2">Username</h3>
+            <input id="username" class="border w-full p-2 mb-1" placeholder="Enter Username">
+            <p class="mb-4 text-[#4A00FF]">Default: admin</p>
+
+
+            <h3 class="mb-2">Password</h3>
+            <input id="password" type="password" class="border w-full p-2 mb-1" placeholder="Enter Password">
+            <p class="mb-6 text-[#4A00FF]">Default: admin123</p>
+
+            <button onclick="login()" class="bg-[#4A00FF] text-white w-full p-2 rounded">
+                Sign In
+            </button>
+
+            <p class="text-center mt-6 ">--------OR--------</p>
+
+            <p class="text-sm text-gray-500 mt-4 text-center">
+                Demo Credentials:
+            </p>
+            <div class="text-center mt-8 bg-gray-100 p-6">
+                <h2><span class="font-bold">Username:</span> admin</h2>
+                <h2><span class="font-bold">Password:</span> admin123</h2>
+            </div>
+
+        </div>
+
+    </div>
+
+
+   
