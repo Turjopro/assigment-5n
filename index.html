@@ -14,7 +14,7 @@
 <body class="bg-gray-100">
 
 
-    <!-- LOGIN PAGE -->
+    <!-- LOGIN PAGE ------------>
 
     <div id="loginPage" class="flex items-center justify-center h-screen">
 
@@ -50,11 +50,11 @@
     </div>
 
 
-    <!-- MAIN PAGE -->
+    <!-- MAIN PAGE -------------->
 
     <div id="mainPage" class="hidden p-6 ">
 
-        <!-- NAVBAR -->
+        <!-- NAVBAR ------------------>
 
         <section>
             <div class="flex justify-between items-center mb-6 border-b pb-6">
@@ -78,10 +78,6 @@
             </div>
         </section>
 
-
-
-       
-
        <section class="w-11/12 mx-auto">
          <!-- TABS -->
          <div class="flex gap-4 mb-6 bg-white p-6">
@@ -99,10 +95,6 @@
             </button>
 
         </div>
-
-
-
-        <!-- ISSUE INFO SECTION (NEW ADDED PART) -->
 
         <div class="bg-white p-4 rounded shadow flex justify-between items-center mb-6">
 
@@ -142,16 +134,10 @@
 
         </div>
 
-
-        <!-- LOADING -->
-
         <div id="loading" class="text-center text-xl hidden">
             Loading...
         </div>
 
-
-
-        <!-- ISSUE GRID -->
 
         <div id="issuesContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
 
@@ -160,30 +146,25 @@
 
     </div>
 
-
-
-    <!-- MODAL -->
 <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center">
 
   <div class="bg-white w-[600px] rounded-xl p-6 shadow-lg">
 
-    <!-- Title -->
     <h2 id="modalTitle" class="text-2xl font-bold mb-2"></h2>
 
-    <!-- Author + Date -->
     <div class="flex items-center gap-3 text-sm text-gray-500 mb-4">
         <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full">Opened</span>
         <span>Opened by <span id="modalAuthor" class="font-medium"></span></span>
         <span id="modalDate"></span>
     </div>
 
-    <!-- Labels -->
+    
     <div id="modalLabels" class="flex gap-2 mb-4"></div>
 
-    <!-- Description -->
+    
     <p id="modalDesc" class="text-gray-600 mb-6"></p>
 
-    <!-- Bottom Info -->
+    
     <div class="bg-gray-100 rounded-lg p-4 flex justify-between items-center">
 
         <div>
@@ -198,7 +179,7 @@
 
     </div>
 
-    <!-- Close -->
+    
     <div class="flex justify-end mt-6">
         <button onclick="closeModal()" class="bg-purple-600 text-white px-5 py-2 rounded-lg">
             Close
